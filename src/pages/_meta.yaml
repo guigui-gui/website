@@ -1,0 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 Hajime Hoshi
+language: en
+theme_color: '#4C8CC0'
+favicon: /images/favicon.png

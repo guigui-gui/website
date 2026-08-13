@@ -1,0 +1,90 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* SPDX-FileCopyrightText: 2026 Hajime Hoshi */
+
+main:has(> #hero) {
+    padding-top: 0;
+}
+main > article {
+    width: calc(59 * var(--unit-size));
+}
+body > header > a.brand {
+    gap: calc(var(--unit-size) / 6);
+}
+.grid {
+    grid-auto-rows: auto 1fr;
+}
+.grid > section {
+    grid-row: span 2;
+    grid-template-rows: subgrid;
+}
+.grid h3 {
+    grid-row: 1;
+}
+.grid > section > p {
+    grid-row: 2;
+}
+
+#hero {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    column-gap: var(--unit-size);
+    width: calc(39 * var(--unit-size));
+    padding-top: calc(3 * var(--unit-size));
+    padding-bottom: calc(3 * var(--unit-size));
+    color: var(--header-color);
+    text-align: start;
+}
+#hero h1 {
+    font-family: var(--font-condensed);
+    font-size: calc(var(--unit-size) * 2);
+    font-weight: 700;
+    line-height: calc(3 * var(--unit-size));
+}
+#hero h1 span {
+    white-space: nowrap;
+}
+.hero-copy {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--unit-size) / 2);
+}
+.hero-copy h1 + p {
+    margin-top: var(--unit-size);
+}
+.hero-copy p {
+    color: var(--foreground-color);
+    text-wrap: pretty;
+}
+.hero-image-placeholder {
+    display: flex;
+    width: min(calc(16 * var(--unit-size)), 100%);
+    aspect-ratio: 1;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    color: var(--sub-color);
+    background-color: var(--grid-cell-background-color);
+    border-radius: calc(var(--unit-size) / 2);
+}
+
+@media (width < 984px) {
+    #hero h1 {
+        font-size: calc(5 * var(--unit-size) / 3);
+        line-height: calc(5 * var(--unit-size) / 2);
+    }
+    .hero-image-placeholder {
+        width: min(calc(40 * var(--unit-size) / 3), 100%);
+    }
+}
+
+@media (width < 744px) {
+    #hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: calc(2 * var(--unit-size));
+        padding-bottom: calc(2 * var(--unit-size));
+    }
+    .hero-image-placeholder {
+        width: min(calc(8 * var(--unit-size)), 100%);
+    }
+}
