@@ -29,13 +29,14 @@ body > header > a.brand {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: center;
     column-gap: var(--unit-size);
+    row-gap: var(--unit-size);
     width: calc(39 * var(--unit-size));
     padding-top: calc(3 * var(--unit-size));
     padding-bottom: calc(3 * var(--unit-size));
-    color: var(--header-color);
     text-align: start;
 }
 #hero h1 {
+    color: var(--header-color);
     font-family: var(--font-condensed);
     font-size: calc(var(--unit-size) * 2);
     font-weight: 700;
@@ -43,6 +44,12 @@ body > header > a.brand {
 }
 #hero h1 span {
     white-space: nowrap;
+}
+#hero > pre {
+    grid-column: 1 / -1;
+}
+#hero > pre > code::before {
+    content: "$ ";
 }
 .hero-copy {
     display: flex;
